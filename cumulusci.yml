@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.78.0'
+project:
+    name: My-Super-Cool-Project
+    package:
+        name: My-Super-Cool-Project
+        api_version: '62.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/My-Super-Cool-Project/tests
+            options:
+                outputdir: robot/My-Super-Cool-Project/results
+
+    robot_testdoc:
+        options:
+            path: robot/My-Super-Cool-Project/tests
+            output: robot/My-Super-Cool-Project/doc/My-Super-Cool-Project_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
